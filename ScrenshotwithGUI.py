@@ -3,12 +3,12 @@ import time
 import tkinter as gui
 
 def screenshot():
-    name = input("You will have 5 seconds to bring the desired interface on screen after typing \n Enter the name to save with \t")
-    name = name+ (str)time.time()+".jpg"
+    name = 'ScreenSHOT'
+    name = name+ str(time.time())+".jpg"
     loc = f'D:/Programs/PYTHON/{name}'
-    time.sleep(5)
+    time.sleep(1)
     img = pyautogui.screenshot()
-    img.save(name)
+    img.save(loc)
     img.show()
 
 root = gui.Tk()
@@ -16,3 +16,7 @@ frame = gui. Frame(root)
 frame.pack ()
 button = gui. Button (frame, text= "Take ScreenShot", command=screenshot)
 button.pack(side=gui. LEFT)
+close = gui.Button(frame,text="Exit",command=quit)
+close.pack(side=gui.RIGHT)
+
+root.mainloop()
